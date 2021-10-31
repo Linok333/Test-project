@@ -1,0 +1,16 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Atoms
+
+// Molecules
+
+// organisms
+
+@import "./styles/components/organisms/App.scss";
+
+// pages
+
+@import "./styles/pages/LoginPage.scss";
+@import "./styles/pages/MainPage.scss";
+@import "./styles/pages/ErrorPage.scss";
+

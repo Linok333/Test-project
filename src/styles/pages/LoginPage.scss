@@ -1,0 +1,13 @@
+
+@mixin display($display, $justify-content, $align-items) {
+	display: $display;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+.loginPage {
+	@include display(flex, center, center);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

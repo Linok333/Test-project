@@ -1,0 +1,9 @@
+@mixin height-width($width, $height) {
+	width: $width;
+  height: $height;
+}
+.containerImage {
+	@include height-width(100%, 100%);
+	position: fixed;
+  left: 0;
+}
