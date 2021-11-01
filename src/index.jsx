@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import {
 	BrowserRouter as Router, Route, Switch, Redirect,
 } from 'react-router-dom';
-import ErrorBoundary from './components/wrappers/ErrorBoundary/ErrorBoundary';
 import { ProtectedRoute } from './components/wrappers/ProtectedRoute';
 import './index.scss';
 import { ErrorPage } from './pages/ErrorPage';
 import { LoginPage } from './pages/LoginPage';
 import { images } from './assets/images';
+import ErrorBoundary from './components/wrappers/ErrorBoundary/ErrorBoundary';
 
 const MainPage = lazy(() => import('./pages/MainPage/MainPage'));
 

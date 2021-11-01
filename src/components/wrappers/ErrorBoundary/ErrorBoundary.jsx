@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Route, withRouter } from 'react-router-dom';
+import { images } from '../../../assets/images';
+// import { BrowserRouter as withRouter } from 'react-router-dom';
+import { ErrorPage } from '../../../pages/ErrorPage';
 
 class ErrorBoundary extends React.PureComponent {
 	constructor(props) {
@@ -7,17 +9,19 @@ class ErrorBoundary extends React.PureComponent {
 		this.state = { error: false };
 	}
 
-	componentDidCatch(error) {
+	componentDidCatch() {
 		this.setState({ error: true });
 	}
 
 	render() {
 		if (this.state.error) {
-			this.props.history.push('/500');
-			return null;
+			// this.props.history.push('/500');
+			return (
+				<ErrorPage image={images['500']} />
+			);
 		}
 		return this.props.children;
 	}
 }
 
-export default withRouter(ErrorBoundary);
+export default ErrorBoundary;
