@@ -6,12 +6,12 @@ import { ContainedButton } from '../../atoms/Buttons/ContainedButton';
 const MainNavbar = ({ isBlue, logout, setIsBlue }) => {
 	const [text, setText] = useState('Autumn is magical');
 	const [counter, setCounter] = useState(0);
-	const getHeader = useCallback((header) => {
+	const getHeader = useCallback(() => {
 		isBlue ? setText('UseCallback is called') : setText('Autumn is magical');
 	}, [isBlue]);
 
 	useEffect(() => {
-		getHeader(text);
+		getHeader();
 	}, [getHeader]);
 
 	return (
