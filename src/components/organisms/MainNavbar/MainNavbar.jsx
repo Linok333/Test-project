@@ -1,13 +1,30 @@
-import React, { memo } from 'react';
-import { EmptyBlock } from '../../atoms/EmptyBlock';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Button } from '@mui/material';
+
 import { ContainedButton } from '../../atoms/Buttons/ContainedButton';
 
-const MainNavbar = ({ isBlue, logout, setIsBlue }) => (
-	<div className="navbar">
-		<EmptyBlock />
-		<h2 onClick={() => setIsBlue(!isBlue)} style={{ cursor: 'pointer', color: isBlue ? 'blue' : 'black' }}> Autumn is magical </h2>
-		<ContainedButton logout={logout} text="Logout" />
-	</div>
-);
+const MainNavbar = ({ isBlue, logout, setIsBlue }) => {
+	const [text, setText] = useState('Autumn is magical');
+	const [counter, setCounter] = useState(0);
+	const getHeader = useCallback((header) => {
+		isBlue ? setText('UseCallback is called') : setText('Autumn is magical');
+	}, [isBlue]);
 
-export default memo(MainNavbar);
+	useEffect(() => {
+		getHeader(text);
+	}, [getHeader]);
+
+	return (
+		<div className="navbar">
+			<Button variant="contained" onClick={() => setCounter(counter + 1)}>
+				{`Just click ${counter}`}
+			</Button>
+			<h2 onClick={() => setIsBlue(!isBlue)} style={{ cursor: 'pointer', color: isBlue ? 'blue' : 'black' }}>
+				{text}
+			</h2>
+			<ContainedButton logout={logout} text="Logout" />
+		</div>
+	);
+};
+
+export default MainNavbar;

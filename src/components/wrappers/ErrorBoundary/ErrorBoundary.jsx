@@ -1,7 +1,11 @@
-import React from 'react';
+// Library
+import React, { lazy } from 'react';
+
+// Assets
 import { images } from '../../../assets/images';
-// import { BrowserRouter as withRouter } from 'react-router-dom';
-import { ErrorPage } from '../../../pages/ErrorPage';
+
+// Pages
+const ErrorPage = lazy(() => import('../../../pages/ErrorPage/ErrorPage'));
 
 class ErrorBoundary extends React.PureComponent {
 	constructor(props) {
@@ -14,13 +18,7 @@ class ErrorBoundary extends React.PureComponent {
 	}
 
 	render() {
-		if (this.state.error) {
-			// this.props.history.push('/500');
-			return (
-				<ErrorPage image={images['500']} />
-			);
-		}
-		return this.props.children;
+		return this.state.error ? <ErrorPage image={images['500']} /> : this.props.children;
 	}
 }
 

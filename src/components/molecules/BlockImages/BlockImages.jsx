@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 const BlockImages = ({ images }) => (
 	<div className="blockImages">
@@ -6,4 +6,4 @@ const BlockImages = ({ images }) => (
 	</div>
 );
 
-export default memo(BlockImages);
+export default BlockImages;
