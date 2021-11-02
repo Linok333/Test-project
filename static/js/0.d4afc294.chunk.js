@@ -1,0 +1,2 @@
+(this["webpackJsonptest-project"]=this["webpackJsonptest-project"]||[]).push([[0],{224:function(t,e,r){"use strict";r.r(e);r(0);var s=r(10),a=r(1);e.default=function(t){var e=t.image;return Object(a.jsx)(s.b,{to:"/dashboard",children:Object(a.jsx)("img",{className:"containerImage",alt:"Error...",src:e})})}}}]);
+//# sourceMappingURL=0.d4afc294.chunk.js.map
